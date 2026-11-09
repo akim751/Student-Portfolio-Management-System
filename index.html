@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portfolio Management System | AKIM</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Student<span>Portfolio</span></div>
+    <button id="logoutBtn" class="button button-light hidden">Logout</button>
+  </header>
+
+  <main class="container">
+    <section id="authSection" class="auth-layout">
+      <div class="intro">
+        <p class="eyebrow">YOUR WORK. YOUR JOURNEY.</p>
+        <h1>Build your student portfolio.</h1>
+        <p>Keep your profile, education, skills, projects and achievements together in one place.</p>
+      </div>
+      <div class="panel auth-panel">
+        <div class="tabs">
+          <button id="loginTab" class="tab active">Login</button>
+          <button id="registerTab" class="tab">Register</button>
+        </div>
+        <form id="authForm">
+          <h2 id="authTitle">Welcome back</h2>
+          <label id="nameLabel" class="hidden">Full name<input id="name" type="text" placeholder="Your full name"></label>
+          <label>Email address<input id="email" type="email" required placeholder="name@example.com"></label>
+          <label>Password<input id="password" type="password" required minlength="6" placeholder="At least 6 characters"></label>
+          <button class="button button-primary full" type="submit" id="authSubmit">Login</button>
+          <p id="authMessage" class="message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="appSection" class="hidden">
+      <div class="welcome">
+        <div><p class="eyebrow">STUDENT WORKSPACE</p><h1 id="welcomeName">Your portfolio</h1><p>Manage and update your student information.</p></div>
+        <div class="stat"><strong id="projectCount">0</strong><span>Projects</span></div>
+        <div class="stat"><strong id="skillCount">0</strong><span>Skills</span></div>
+        <div class="stat"><strong id="achievementCount">0</strong><span>Achievements</span></div>
+      </div>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Personal Profile</h2>
+          <form id="profileForm" class="form-grid">
+            <label>Full name<input id="profileName" required></label>
+            <label>Headline<input id="headline" placeholder="e.g. Computer Science Student"></label>
+            <label>Phone<input id="phone"></label>
+            <label>Location<input id="location"></label>
+            <label class="span-2">About me<textarea id="about" rows="3" placeholder="Write a short introduction"></textarea></label>
+            <button class="button button-primary" type="submit">Save Profile</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Education</h2>
+          <form id="educationForm" class="form-grid">
+            <label>Qualification<input id="eduQualification" required placeholder="BSc"></label>
+            <label>Institution<input id="eduInstitution" required placeholder="College name"></label>
+            <label>Year<input id="eduYear" placeholder="2026"></label>
+            <label>Grade<input id="eduGrade" placeholder="Percentage / CGPA"></label>
+            <button class="button button-primary" type="submit">Add Education</button>
+          </form>
+          <div id="educationList" class="item-list"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Skills</h2>
+          <form id="skillForm" class="inline-form">
+            <input id="skillInput" required placeholder="e.g. HTML">
+            <button class="button button-primary" type="submit">Add</button>
+          </form>
+          <div id="skillsList" class="chips"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Projects</h2>
+          <form id="projectForm" class="form-grid">
+            <label>Project title<input id="projectTitle" required></label>
+            <label>Technologies<input id="projectTech" placeholder="HTML, CSS, JavaScript"></label>
+            <label class="span-2">Description<textarea id="projectDescription" rows="2"></textarea></label>
+            <label class="span-2">Project link (optional)<input id="projectLink" type="url" placeholder="https://"></label>
+            <button class="button button-primary" type="submit">Add Project</button>
+          </form>
+          <div id="projectsList" class="item-list"></div>
+        </section>
+
+        <section class="panel span-2">
+          <h2>Achievements</h2>
+          <form id="achievementForm" class="form-grid">
+            <label>Achievement title<input id="achievementTitle" required></label>
+            <label>Date<input id="achievementDate" placeholder="2026"></label>
+            <label class="span-2">Description<textarea id="achievementDescription" rows="2"></textarea></label>
+            <button class="button button-primary" type="submit">Add Achievement</button>
+          </form>
+          <div id="achievementsList" class="item-list"></div>
+        </section>
+      </div>
+      <p id="appMessage" class="message" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer>Student Portfolio Management System · Academic Project</footer>
+  <script src="/js/app.js"></script>
+</body>
+</html>
